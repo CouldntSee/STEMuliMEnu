@@ -24,12 +24,14 @@
         .btn {
             background-color: #ff5733;
             color: white;
-            padding: 10px 20px;
+            padding: 15px 30px;
+            font-size: 18px;
             text-decoration: none;
             border-radius: 5px;
             display: inline-block;
             margin-top: 10px;
             cursor: pointer;
+            border: none;
         }
         .btn:hover {
             background-color: #e64c2c;
@@ -83,12 +85,12 @@
         }
     </style>
     <script>
-        function showPopup() {
-            document.getElementById("contactPopup").style.display = "block";
+        function showPopup(id) {
+            document.getElementById(id).style.display = "block";
             document.getElementById("overlay").style.display = "block";
         }
-        function closePopup() {
-            document.getElementById("contactPopup").style.display = "none";
+        function closePopup(id) {
+            document.getElementById(id).style.display = "none";
             document.getElementById("overlay").style.display = "none";
         }
     </script>
@@ -100,38 +102,43 @@
     <div class="container">
         <h2>Welcome to STEMULI!</h2>
         <p>Bringing you the best affordable and delicious refreshments & foods for hot summer days!</p>
-        <button class="btn" onclick="showPopup()">Order Now</button>
-        <a href="#" class="btn">Join Our Grand Opening!</a>
+        <a href="#" class="btn" onclick="showPopup('grandOpeningPopup')">Join Our Grand Opening!</a>
     </div>
     <div class="container menu">
         <h2>Our Menu</h2>
         <div class="menu-item">
             <h3>Refreshing Iced Drinks</h3>
-            <p>🍹 Lemon Iced Tea - ₱50</p>
-            <p>🥤 Blueberry Slush - ₱55</p>
-            <p>🍋 Citrus Cooler - ₱60</p>
+            <p>🍋 Cucumber Lemonade - ₱</p>
         </div>
         <div class="menu-item">
-            <h3>Delicious Snacks</h3>
-            <p>🌭 Cheesy Hotdog Bites - ₱45</p>
-            <p>🍟 Crispy Fries - ₱50</p>
-            <p>🥪 Ham & Cheese Sandwich - ₱55</p>
+            <h3>Main</h3>
+            <p>🍣 Kimbap - ₱</p>
+            <p>🥪 Tuna bread - ₱</p>
         </div>
         <div class="menu-item">
             <h3>Sweet Desserts</h3>
-            <p>🍰 Chocolate Brownie - ₱40</p>
-            <p>🍩 Glazed Donut - ₱35</p>
-            <p>🍦 Vanilla Ice Cream - ₱50</p>
+            <p>🍫 Graham Bar - ₱</p>
+            <p>🍮 Jelly Cake - ₱</p>
         </div>
     </div>
-    <div id="overlay" class="overlay" onclick="closePopup()"></div>
+    <button class="btn" style="font-size: 20px; margin-top: 20px;" onclick="showPopup('contactPopup')">Order Now</button>
+    
+    <div id="overlay" class="overlay" onclick="closePopup('contactPopup'); closePopup('grandOpeningPopup');"></div>
+    
     <div id="contactPopup" class="popup">
         <h2>Contact Us</h2>
         <p><strong>Phone:</strong> +63929-3422-281</p>
         <p><strong>Email:</strong> stemuli2025@gmail.com</p>
-        <p><strong>Address:</strong> Doyong, Calasiao, Pangasinan, Philippines PH</p>
-        <button class="close" onclick="closePopup()">Close</button>
+        <p><strong>Address:</strong> Doyong, Calasiao, Pangasinan, Philippines</p>
+        <button class="close" onclick="closePopup('contactPopup')">Close</button>
     </div>
+    
+    <div id="grandOpeningPopup" class="popup">
+        <h2>Join Us in Our Grand Opening!</h2>
+        <p>Exciting prizes await! Be part of our special day and enjoy amazing treats.</p>
+        <button class="close" onclick="closePopup('grandOpeningPopup')">Close</button>
+    </div>
+    
     <footer>
         &copy; 2025 STEMULI. All Rights Reserved.
     </footer>
