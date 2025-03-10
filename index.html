@@ -9,32 +9,39 @@
 </head>
 <body>
     <header>
-        STEMULI - Affordable and Delicious Treats
+        <h1>STEMULI - Affordable & Delicious Treats</h1>
     </header>
+    
     <div class="container">
         <h2>Welcome to STEMULI!</h2>
         <p>Bringing you the best affordable and delicious refreshments & foods for hot summer days!</p>
-        <a href="#" class="btn" onclick="showPopup('grandOpeningPopup')">Join Our Grand Opening!</a>
+        <button class="btn" onclick="showPopup('grandOpeningPopup')">Join Our Grand Opening!</button>
     </div>
+    
     <div class="container menu">
         <h2>Our Menu</h2>
         <div class="menu-grid">
             <div class="menu-item cube">
                 <h3>Refreshing Iced Drinks</h3>
-                <p>🍋 Cucumber Lemonade - ₱</p>
+                <p>🍋 Cucumber Lemonade - ₱50</p>
+                <p>🥭 Mango Shake - ₱60</p>
+                <p>🍉 Watermelon Cooler - ₱55</p>
             </div>
             <div class="menu-item cube">
                 <h3>Main</h3>
-                <p>🍣 Kimbap - ₱</p>
-                <p>🥪 Tuna bread - ₱</p>
+                <p>🍣 Kimbap - ₱80</p>
+                <p>🥪 Tuna Bread - ₱40</p>
+                <p>🍗 Chicken Wrap - ₱90</p>
             </div>
             <div class="menu-item cube">
                 <h3>Sweet Desserts</h3>
-                <p>🍫 Graham Bar - ₱</p>
-                <p>🍮 Jelly Cake - ₱</p>
+                <p>🍫 Graham Bar - ₱30</p>
+                <p>🍮 Jelly Cake - ₱45</p>
+                <p>🎂 Choco Moist Cake - ₱70</p>
             </div>
         </div>
     </div>
+    
     <button class="btn order-btn" onclick="showPopup('contactPopup')">Order Now</button>
     
     <div id="overlay" class="overlay" onclick="closePopup('contactPopup'); closePopup('grandOpeningPopup');"></div>
