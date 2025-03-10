@@ -29,6 +29,7 @@
             border-radius: 5px;
             display: inline-block;
             margin-top: 10px;
+            cursor: pointer;
         }
         .btn:hover {
             background-color: #e64c2c;
@@ -44,6 +45,34 @@
             width: 80%;
             box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
         }
+        .popup {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .popup .close {
+            background: red;
+            color: white;
+            border: none;
+            padding: 5px 10px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        .overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+        }
         footer {
             background-color: #333;
             color: white;
@@ -53,6 +82,16 @@
             bottom: 0;
         }
     </style>
+    <script>
+        function showPopup() {
+            document.getElementById("contactPopup").style.display = "block";
+            document.getElementById("overlay").style.display = "block";
+        }
+        function closePopup() {
+            document.getElementById("contactPopup").style.display = "none";
+            document.getElementById("overlay").style.display = "none";
+        }
+    </script>
 </head>
 <body>
     <header>
@@ -61,26 +100,41 @@
     <div class="container">
         <h2>Welcome to STEMULI!</h2>
         <p>Bringing you the best affordable and delicious refreshments & foods for hot summer days!</p>
-        <a href="#" class="btn">Order Now</a>
+        <button class="btn" onclick="showPopup()">Order Now</button>
         <a href="#" class="btn">Join Our Grand Opening!</a>
     </div>
     <div class="container menu">
         <h2>Our Menu</h2>
         <div class="menu-item">
             <h3>Refreshing Iced Drinks</h3>
-            <p>Stay cool with our summer-perfect drinks!</p>
+            <p>🍹 Lemon Iced Tea - ₱50</p>
+            <p>🥤 Blueberry Slush - ₱55</p>
+            <p>🍋 Citrus Cooler - ₱60</p>
         </div>
         <div class="menu-item">
             <h3>Delicious Snacks</h3>
-            <p>Affordable and tasty treats for any time of the day.</p>
+            <p>🌭 Cheesy Hotdog Bites - ₱45</p>
+            <p>🍟 Crispy Fries - ₱50</p>
+            <p>🥪 Ham & Cheese Sandwich - ₱55</p>
         </div>
         <div class="menu-item">
             <h3>Sweet Desserts</h3>
-            <p>Satisfy your cravings with our best-selling sweets!</p>
+            <p>🍰 Chocolate Brownie - ₱40</p>
+            <p>🍩 Glazed Donut - ₱35</p>
+            <p>🍦 Vanilla Ice Cream - ₱50</p>
         </div>
+    </div>
+    <div id="overlay" class="overlay" onclick="closePopup()"></div>
+    <div id="contactPopup" class="popup">
+        <h2>Contact Us</h2>
+        <p><strong>Phone:</strong> +63929-3422-281</p>
+        <p><strong>Email:</strong> stemuli2025@gmail.com</p>
+        <p><strong>Address:</strong> Doyong, Calasiao, Pangasinan, Philippines PH</p>
+        <button class="close" onclick="closePopup()">Close</button>
     </div>
     <footer>
         &copy; 2025 STEMULI. All Rights Reserved.
     </footer>
 </body>
 </html>
+
